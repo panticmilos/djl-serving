@@ -7,13 +7,11 @@ on:
         description: 'The released version of DJL'
         required: false
         default: ''
-  schedule:
-    - cron: '0 15 * * *'
 
 
 jobs:
   create-runners:
-    runs-on: [self-hosted, scheduler]
+    runs-on: [ubuntu-latest]
     steps:
       - name: Create new GPU instance
         id: create_gpu
