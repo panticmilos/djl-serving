@@ -179,7 +179,6 @@ jobs:
   gpu-test:
     runs-on: [ ubuntu-latest ]
     timeout-minutes: 30
-    needs: create-runners
     steps:
       - uses: actions/checkout@v3
       - name: Clean env
