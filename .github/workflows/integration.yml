@@ -120,7 +120,7 @@ jobs:
           path: tests/integration/logs/
 
   inferentia-test:
-    runs-on: [ self-hosted, inf ]
+    runs-on: [ ubuntu-latest ]
     timeout-minutes: 30
     needs: create-runners
     steps:
@@ -177,7 +177,7 @@ jobs:
           path: tests/integration/logs/
 
   gpu-test:
-    runs-on: [ self-hosted, gpu ]
+    runs-on: [ ubuntu-latest ]
     timeout-minutes: 30
     needs: create-runners
     steps:
@@ -234,7 +234,7 @@ jobs:
           path: tests/integration/logs/
 
   aarch64-test:
-    runs-on: [ self-hosted, aarch64 ]
+    runs-on: [ ubuntu-latest ]
     timeout-minutes: 30
     needs: create-runners
     steps:
@@ -284,7 +284,7 @@ jobs:
 
   stop-runners:
     if: always()
-    runs-on: [ self-hosted, scheduler ]
+    runs-on: [ ubuntu-latest ]
     needs: [ create-runners, inferentia-test, aarch64-test, gpu-test ]
     steps:
       - name: Stop all instances
